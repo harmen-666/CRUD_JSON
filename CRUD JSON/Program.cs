@@ -68,13 +68,14 @@ namespace CRUD_JSON
             Console.ReadLine();
 
             //Create
-            bewerkingen.VoegPuntToe("Willems", "Wim", "NaWe", 7.5);
+            bewerkingen.VoegPuntToe(bestaandelijst, "Willems", "Wim", "NaWe", 7.5);
             //Read
-            bewerkingen.ToonPunten("Willems", "Wim");
+            bewerkingen.ToonLeerlingen(bestaandelijst);
+            bewerkingen.ToonPunten(bestaandelijst, "Willems", "Wim");
             //Update
-            bewerkingen.PasPuntAan("Willems", "Wim", "NaWe", 9.5);
+            bewerkingen.PasPuntAan(bestaandelijst, "Willems", "Wim", "NaWe", 9.5);
             //Delete
-            bewerkingen.VerwijderPunten("Willems", "Wim", "NaWe");
+            bewerkingen.VerwijderPunten(bestaandelijst, "Willems", "Wim", "NaWe");
 
         }
 
@@ -110,22 +111,27 @@ namespace CRUD_JSON
 
     public class Crud
     {
-        public void PasPuntAan(string v1, string v2, string v3, double v4)
+        public void PasPuntAan(Leerlingen lijst, string v1, string v2, string v3, double v4)
         {
             throw new NotImplementedException();
         }
 
-        public void ToonPunten(string v1, string v2)
+        public void ToonLeerlingen(Leerlingen lijst)
         {
             throw new NotImplementedException();
         }
 
-        public void VerwijderPunten(string v1, string v2, string v3)
+        public void ToonPunten(Leerlingen lijst, string v1, string v2)
         {
             throw new NotImplementedException();
         }
 
-        public void VoegPuntToe(string v1, string v2, string v3, double v4)
+        public void VerwijderPunten(Leerlingen lijst, string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VoegPuntToe(Leerlingen lijst, string v1, string v2, string v3, double v4)
         {
             throw new NotImplementedException();
         }
