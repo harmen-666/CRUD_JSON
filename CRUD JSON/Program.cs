@@ -12,6 +12,8 @@ namespace CRUD_JSON
     {
         static void Main(string[] args)
         {
+            Crud bewerkingen = new Crud();
+
             Leerlingen nieuweLijst = new Leerlingen
             {
                 LeerlingLijst = new List<Leerling>
@@ -64,6 +66,16 @@ namespace CRUD_JSON
                 Console.WriteLine(ll.Naam + " " + ll.Voornaam);
             }
             Console.ReadLine();
+
+            //Create
+            bewerkingen.VoegPuntToe("Willems", "Wim", "NaWe", 7.5);
+            //Read
+            bewerkingen.ToonPunten("Willems", "Wim");
+            //Update
+            bewerkingen.PasPuntAan("Willems", "Wim", "NaWe", 9.5);
+            //Delete
+            bewerkingen.VerwijderPunten("Willems", "Wim", "NaWe");
+
         }
 
     }
@@ -94,6 +106,29 @@ namespace CRUD_JSON
             this.Punten = punten;
         }
         
+    }
+
+    public class Crud
+    {
+        public void PasPuntAan(string v1, string v2, string v3, double v4)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ToonPunten(string v1, string v2)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VerwijderPunten(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VoegPuntToe(string v1, string v2, string v3, double v4)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
