@@ -108,32 +108,86 @@ namespace CRUD_JSON
         }
         
     }
-
     public class Crud
     {
-        public void PasPuntAan(Leerlingen lijst, string v1, string v2, string v3, double v4)
+        public void PasPuntAan(Leerlingen lijst, string naam, string voornaam, string vak, double punten)
         {
-            throw new NotImplementedException();
+            foreach(Leerling ll in lijst.LeerlingLijst)
+            {
+                Console.WriteLine("leerling: " + naam + voornaam + "gevonden");
+                if (ll.Naam == naam && ll.Voornaam == voornaam)
+                {
+                    foreach (Punt p in ll.Punten)
+                    {
+                        if (p.Vak == vak)
+                        {
+                            p.Punten = punten;
+                            Console.WriteLine("vak" + vak + "is aangepast");
+                        }
+                        else
+                        {
+                            Console.WriteLine("leerling niet gevonden");
+                            
+                        }
+                        Console.ReadLine();
+                    }
+                }
+            }
         }
 
-        public void ToonLeerlingen(Leerlingen lijst)
+        public void ToonLeerlingen(Leerlingen lijst, string naam, string voornaam)
         {
-            throw new NotImplementedException();
+            foreach(Leerling ll in lijst.LeerlingLijst)
+            {
+                Console.WriteLine(ll.Naam + " " + ll.Voornaam + " , " + ll.Klas);
+
+            }
         }
 
-        public void ToonPunten(Leerlingen lijst, string v1, string v2)
+        public void ToonPunten(Leerlingen lijst, string voorNaam, string richting, string achterNaam)
         {
-            throw new NotImplementedException();
+            foreach (Leerling ll in lijst.LeerlingLijst)
+            {
+                if (ll.Naam == achterNaam)
+                {
+                    if (ll.Voornaam == voorNaam)
+                    {
+                        foreach (Punt p in ll.Punten)
+                        {
+                            Console.WriteLine(p);
+                        }
+                    }
+                }
+            }
+            
         }
 
-        public void VerwijderPunten(Leerlingen lijst, string v1, string v2, string v3)
+        public void VerwijderPunten(Leerlingen lijst, string voorNaam, string richting, string achterNaam, string String)
         {
-            throw new NotImplementedException();
+            int niks = 0;
+            foreach (Leerling ll in lijst.LeerlingLijst)
+            {
+                if (ll.Naam == achterNaam)
+                {
+                    if (ll.Voornaam == voorNaam)
+                    {
+                        for (int x = 0; x < lijst.LeerlingLijst[niks].Punten.Count; x++)
+                        {
+                            if (lijst.LeerlingLijst[niks].Punten[x].Vak ==String)
+                            {
+
+                                lijst.LeerlingLijst[niks].Punten[x] =  null;
+                            }
+                        }
+                    }
+                }
+                niks++;
+            }
         }
 
         public void VoegPuntToe(Leerlingen lijst, string v1, string v2, string v3, double v4)
         {
-            throw new NotImplementedException();
+            lijst.LeerlingLijst[0].Punten.Add(new Punt("Bloemschikken", 9));
         }
     }
 
